@@ -1,11 +1,11 @@
-const title = document.getElementById("title");
-const author = document.getElementById("author");
-const isbn = document.getElementById("isbn");
-const submit = document.getElementById("submit");
-const bookList = document.getElementById("book-list");
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const isbn = document.getElementById('isbn');
+const submit = document.getElementById('submit');
+const bookList = document.getElementById('book-list');
 
-submit.addEventListener("click",function(e){
-	e.preventDefult();
+submit.addEventListener('click', function(e){
+	e.preventDefault();
 
 	const titleVal = title.value.trim();
 	const authorVal = author.value.trim();
@@ -22,7 +22,7 @@ const row = document.createElement('tr');
 	   <td>${titleVal}</td>
 	   <td>${authorVal}</td>
 	   <td>${isbnVal}</td>
-	   <td><button id="delete">X</button></td>
+	   <td><button class="delete"> X </button></td>
 	`;
 	bookList.appendChild(row);
 
@@ -33,7 +33,6 @@ const row = document.createElement('tr');
 
 bookList.addEventListener('click', function(e) {
   if (e.target.classList.contains('delete')) {
-    const row = e.target.parentElement.parentElement;
-    row.remove(); // removes the whole <tr>
+    e.target.closest('tr').remove();
   }
 });
