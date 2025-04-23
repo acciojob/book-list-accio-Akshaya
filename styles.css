@@ -38,4 +38,15 @@ input{
 .table{
 	display:flex;
 	column-gap:20px;
+	border-bottom: 2px solid black;
+}
+
+.table th {
+  width:200px;
+  padding-right: 100px;
+  gap:20%;
+}
+
+.table>thead > tr{
+	border-bottom: 2px solid gray;
 }
